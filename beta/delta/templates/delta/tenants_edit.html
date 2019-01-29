@@ -1,0 +1,19 @@
+{% extends 'delta/base.html' %}
+{% block content %}
+  <div class="jumbotron container" id="edit-jumb">
+    <div class="container">
+      <h3>Edit Tenant Details:</h3>
+      <hr>
+      <form method="POST" >
+        <fieldset class="post-edit-1" >
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="submit-edit-form">
+            <button type="submit" class="btn btn-success" name="button">Update</button>
+            <a id="edit-cancel" class="btn btn-secondary" href="{% url 'detail' object.id object.slug %}">Cancel</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'delta/base.html' %}
+{% block content %}
+
+
+<div class="jumbotron">
+    {{object.name}} {{object.age}}
+    <br>
+    <br>
+    {{object.gender}}
+    <br> <br>
+
+    Mobile number:
+     <br>
+    {{object.mobileno_1}}
+    <br>
+    {{object.mobileno_2}}
+    <br>
+    {{object.mobileno_3}}
+    <br>
+
+     <br> <br>
+    Address:
+    <br>
+    {{object.address}}
+    <br>
+    {{object.city}}
+    <br>
+    {{object.country}}
+    <br>  <br>
+    {{object.created_on}}
+    <br>
+    {{object.location}}
+      <br> <br>
+
+    <a href="{%url 'update' object.id object.slug %}"  class="btn btn-primary btn-lg " >Update</a>
+    <a href="{%url 'delete' object.id object.slug %}" class="btn btn-danger btn-lg "   >Delete</a>
+</div>
+
+
+
+
+
+{% endblock %}

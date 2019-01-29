@@ -1,0 +1,19 @@
+{% extends 'delta/base.html' %}
+{% block content %}
+    <br>
+    {% for info in infos %}
+    <div class="container">
+    <div class="card">
+    <h5 class="card-header">{{info.name}}</h5>
+    <div class="card-body">
+        <h5 class="card-title">{{info.age}},{{infos.gender}}</h5>
+        <p class="card-text">{{info.address}},{{info.city}}</p>
+        <a href="{% url 'detail' info.id info.slug %}" class="btn btn-primary">More details...</a>
+    </div>
+    </div>
+    </div>
+    <br>
+    {% endfor %}
+
+
+{% endblock %}
